@@ -10,7 +10,11 @@ namespace StringCalculatorLibrary.StringValidatorChain
     {
         public override int Handle(string input)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(input))
+            {
+                return 0;
+            }
+            return 1;
         }
     }
 }

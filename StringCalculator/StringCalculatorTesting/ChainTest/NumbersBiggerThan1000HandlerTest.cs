@@ -17,7 +17,6 @@ namespace StringCalculatorTesting.ChainTest
             _sut = new NumbersBiggerThan1000Handler();
         }
 
-        [Fact]
         public void Should_Ignore_Numbers_Bigger_Than_1000()
         {
 

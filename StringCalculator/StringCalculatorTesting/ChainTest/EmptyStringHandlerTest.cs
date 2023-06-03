@@ -19,6 +19,10 @@ namespace StringCalculatorTesting.ChainTest
         [Fact]
         public void Should_Handle_Empty_String()
         {
+            var expected = 0;
+            var actual = _sut.Handle(string.Empty);
+
+            Assert.Equal(expected, actual);
         }
     }
 

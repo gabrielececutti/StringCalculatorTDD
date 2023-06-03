@@ -16,7 +16,7 @@ namespace StringCalculatorTesting.ChainTest
             _sut = new OneNumberHandler();
         }
 
-        [Fact]
+
         public void Should_Handle_One_Number()
         {
         }

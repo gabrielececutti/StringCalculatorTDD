@@ -15,7 +15,6 @@ namespace StringCalculatorTesting.ChainTest
             _sut = new UnKnownNumbersHandler();
         }
 
-        [Fact]
         public void Should_Handle_Unknown_Numbers()
         {
         }

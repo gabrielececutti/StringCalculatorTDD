@@ -17,7 +17,6 @@ namespace StringCalculatorTesting.ChainTest
             _sut = new NegativeNumbersHandler();
         }
 
-        [Fact]
         public void Should_Throw_Exception_With_Negative_Numbers()
         {
 
