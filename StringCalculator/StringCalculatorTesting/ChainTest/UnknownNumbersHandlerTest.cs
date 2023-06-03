@@ -15,8 +15,12 @@ namespace StringCalculatorTesting.ChainTest
             _sut = new UnKnownNumbersHandler();
         }
 
+        [Fact]
         public void Should_Handle_Unknown_Numbers()
         {
+            var expected = 8;
+            var acutal = _sut.Handle("3,2,2,1");
+            Assert.Equal(expected, acutal);
         }
     }
 }

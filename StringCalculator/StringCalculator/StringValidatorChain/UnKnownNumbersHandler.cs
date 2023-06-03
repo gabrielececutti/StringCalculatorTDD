@@ -10,7 +10,11 @@ namespace StringCalculatorLibrary.StringValidatorChain
     {
         public override int Handle(string input)
         {
-            throw new NotImplementedException();
+            if (input.Length > 1) 
+            {
+                return input.Split(",").Select(n => int.Parse(n.ToString())).Sum();
+            }
+            return 0;
         }
     }
 }
