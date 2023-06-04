@@ -10,6 +10,10 @@ namespace StringCalculatorLibrary
     {
         public static int[] ToIntArray (this string str)
         {
+            if (str.EndsWith (","))
+            {
+                throw new Exception();
+            }
             if (str.Contains('\n'))
             {
                 var splitted = str.Split('\n');

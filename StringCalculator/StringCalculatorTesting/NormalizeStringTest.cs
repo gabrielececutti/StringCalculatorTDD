@@ -24,12 +24,13 @@ namespace StringCalculatorTesting
             Assert.Throws<Exception>(() => "2,\n3".ToIntArray());
         }
 
-        public void Should_Handle_Different_Delimiters()
+        [Fact]
+        public void Should_Throw_Excpetion_With_Delimiter_At_End()
         {
-
+            Assert.Throws<Exception>(() => "1,2,".ToIntArray());
         }
 
-        public void Should_Throw_Excpetion_With_Delimiter_At_End()
+        public void Should_Handle_Different_Delimiters()
         {
 
         }
