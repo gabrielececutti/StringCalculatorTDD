@@ -16,7 +16,7 @@ Notes:
 
 5. Allow the add method to handle different delimiters To change the delimiter, the beginning of the input will contain a separate line that looks like this: //[delimiter]\n[numbers] “//;\n1;3” should return “4” “//|\n1|2|3” should return “6” “//sep\n2sep5” should return “7” “//|\n1|2,3” is invalid and should throw an exception with the message “‘|’ expected but ‘,’ found at position 3.”.
 
-6. Calling add with negative numbers will throw Exception “Negative number(s) not allowed: ” “1,-2” is invalid and should return the message “Negative number(s) not allowed: -2” “2,-4,-9” is invalid and should return the message “Negative number(s) not allowed: -4, -9”.
+6. “2,-4,-9” is invalid and should return the message “Negative number(s) not allowed: -4, -9”.
 
 7. Calling add with multiple errors will return all error messages separated by newlines “//|\n1|2,-3” is invalid and return the message “Negative number(s) not allowed: -3\n’|’ expected but ‘,’ found at position 3.”.
 
