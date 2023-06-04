@@ -12,7 +12,7 @@ namespace StringCalculatorLibrary.StringValidatorChain
         {
             if (input.Length > 1) 
             {
-                return input.Split(",").Select(n => int.Parse(n.ToString())).Sum();
+                return input.ToIntArray().Sum();
             }
             return 0;
         }

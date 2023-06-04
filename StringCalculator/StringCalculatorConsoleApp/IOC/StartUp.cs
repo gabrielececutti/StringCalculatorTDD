@@ -24,11 +24,10 @@ namespace StringCalculatorConsoleApp.IOC
                         .AddSingleton<IStringCalculatorHandler>(_ =>
                         {
                             var emptyHandler = new EmptyStringHandler();
-                            var oneNumberHandler = new OneNumberHandler();
                             var unknownNumbersHanler = new UnKnownNumbersHandler();
 
-                            emptyHandler.SetSuccessor(oneNumberHandler);
-                            oneNumberHandler.SetSuccessor(unknownNumbersHanler);
+                            emptyHandler.SetSuccessor(unknownNumbersHanler);
+                            unknownNumbersHanler.SetSuccessor(unknownNumbersHanler);
 
                             return emptyHandler;
                         })).Build();

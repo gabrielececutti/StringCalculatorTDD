@@ -15,11 +15,13 @@ namespace StringCalculatorTesting.ChainTest
             _sut = new UnKnownNumbersHandler();
         }
 
-        [Fact]
-        public void Should_Handle_Unknown_Numbers()
+        [Theory]
+        [InlineData("3,2,2,1")]
+        [InlineData("1, 2\n3,2")]
+        public void Should_Handle_Unknown_Numbers(string input)
         {
             var expected = 8;
-            var acutal = _sut.Handle("3,2,2,1");
+            var acutal = _sut.Handle(input);
             Assert.Equal(expected, acutal);
         }
     }

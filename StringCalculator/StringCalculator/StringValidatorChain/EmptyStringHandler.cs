@@ -10,7 +10,7 @@ namespace StringCalculatorLibrary.StringValidatorChain
     {
         public override int Handle(string input)
         {
-            if (string.IsNullOrEmpty(input))
+            if (input.ToIntArray().Length == 0)
             {
                 return 0;
             }
