@@ -10,7 +10,14 @@ namespace StringCalculatorLibrary.StringValidatorChain
     {
         public override int Handle(string input)
         {
-            throw new NotImplementedException();
+            var numbers = input.ToIntArray();
+            if (numbers.Any( n => n < 0)) // negative numbers are invalid
+            {
+                var negativeNumbers = numbers.Where(n => n < 0);
+                var message = $"Negative number(s) not allowed: {string.Join(", ", negativeNumbers)}";
+                throw new Exception(message);
+            }
+            return 0;
         }
     }
 }

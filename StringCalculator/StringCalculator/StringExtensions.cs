@@ -10,12 +10,13 @@ namespace StringCalculatorLibrary
     {
         public static int[] ToIntArray (this string str)
         {
+
             if (str.StartsWith("//")) // new delimiter
             {
                 var splitted = str.Split('\n');
                 var separator = splitted[0].Split("//")[1];
                 var x = splitted[1].Split(separator);
-                if (x.Any( s => s.Length != 1))
+                if (x.Any( s => s.Length != 1)) // invalid use new delimiter
                 {
                     foreach (var n in x)
                     {
