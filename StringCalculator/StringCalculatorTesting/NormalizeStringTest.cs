@@ -30,9 +30,20 @@ namespace StringCalculatorTesting
             Assert.Throws<Exception>(() => "1,2,".ToIntArray());
         }
 
-        public void Should_Handle_Different_Delimiters()
+        [Theory]
+        [InlineData("//;\n1;2;3")]
+        [InlineData("//|\n1|2|3")]
+        [InlineData("//sep\n1sep2sep3")]
+        public void Should_Handle_Different_Delimiters(string input)
         {
+            Assert.Equal(input.ToIntArray(), new int[] { 1, 2, 3 });
+        }
 
+        [Fact] 
+        public void Should_Throw_Excpetion_With_Incorrect_Use_New_Delimiter()
+        {
+            var exception = Assert.Throws<Exception>(() => "//|\n1|2,3".ToIntArray());
+            Assert.Equal("'|' expected but ',' found at position 3", exception.Message);
         }
 
         public void Should_Throw_Excpetion_With_Delimiter_In_Sequence()
@@ -40,9 +51,6 @@ namespace StringCalculatorTesting
 
         }
 
-        public void Should_Throw_Excpetion_With_Incorrect_Use_New_Delimiter()
-        {
 
-        }
     }
 }
